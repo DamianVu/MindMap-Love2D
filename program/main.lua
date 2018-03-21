@@ -2,8 +2,15 @@
 -- Features: None :)
 
 require "CONSTANTS"
+require "functions/helperFunctions"
+require "functions/debugFunctions"
 require "states/loading"
 require "states/playground"
+
+ActionHandler = require "handlers/action-handler"
+StateHandler = require "handlers/state-handler"
+Debugger = require "handlers/debug-handler"
+MacroHandler = require "handlers/macro-handler"
 	
 -- Objects
 NodeScape = require "handlers/nodescape"
@@ -11,12 +18,10 @@ NodeScape = require "handlers/nodescape"
 CTRL, ALT, SHIFT = false
 
 function love.load()
-	StateHandler = require "handlers/state-handler" -- Will always only need one
-	Debugger = require "handlers/debug-handler"
-
+	-- ORDER MATTERS
 	StateHandler = StateHandler:init()
 	Debugger = Debugger:init()
-
+	MacroHandler = MacroHandler:init()
 end
 
 function love.draw()
@@ -30,7 +35,8 @@ function love.update(dt)
 end
 
 function love.keypressed(key)
-	if key == 'm' then StateHandler:toggleState() end
-
-	print("Key Pressed: "..key)
+	-- if key == 'm' then StateHandler:toggleState() end
+	if not contains(badKeys,key) then 
+		MacroHandler:executeAction(key)
+	end
 end
