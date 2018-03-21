@@ -1,8 +1,15 @@
 -- Initial version.
 -- Features: None :)
 
-function love.load()
+require "CONSTANTS"
 
+CTRL, ALT, SHIFT = false
+
+function love.load()
+	NodeHandler = require "handlers/node-handler"
+	StateHandler = require "handlers/state-handler"
+
+	StateHandler = StateHandler:init()
 end
 
 function love.draw()
