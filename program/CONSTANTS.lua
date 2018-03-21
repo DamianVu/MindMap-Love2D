@@ -1,10 +1,10 @@
 
 -- States
-LOADING = 1
-MAINMENU = 2
-OPENMENU = 3
-LOADMENU = 4
-EDITOR = 5
-PLAYGROUND = 99
+LOADING = "Loading"
+MAINMENU = "Main Menu"
+OPENMENU = "Open Nodescape"
+LOADMENU = "Loading Nodescape"
+EDITOR = "Editing Nodescape"
+PLAYGROUND = "Damian's Playground"
 
 -- Modifiers

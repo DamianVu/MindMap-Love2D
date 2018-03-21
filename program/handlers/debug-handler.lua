@@ -3,7 +3,7 @@ local debugger = {}
 
 function debugger:init(flags)
 	local obj = {
-
+		enabled = true
 	}
 	setmetatable(obj, self)
 	self.__index = self
@@ -11,7 +11,9 @@ function debugger:init(flags)
 end
 
 function debugger:draw()
-	love.graphics.print("Current State: " )
+	if self.enabled then
+		love.graphics.print("Current State: "..StateHandler:getCurrentState(), 10, 10)
+	end
 end
 
 function debugger:update(dt)
