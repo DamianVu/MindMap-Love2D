@@ -15,8 +15,6 @@ MacroHandler = require "handlers/macro-handler"
 -- Objects
 NodeScape = require "handlers/nodescape"
 
-CTRL, ALT, SHIFT = false
-
 function love.load()
 	-- ORDER MATTERS
 	StateHandler = StateHandler:init()
