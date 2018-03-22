@@ -1,29 +1,38 @@
--- Initial version.
--- Features: None :)
+-- Progress for Release 1
+-- Goals: Basic Node Creation, Basic link creation, saving and loading with positions
 
-require "CONSTANTS"
-require "functions/helperFunctions"
-require "functions/debugFunctions"
+require "data/CONSTANTS"
+require "data/default-settings"
+require "functions/helper-functions"
+require "functions/debug-functions"
+require "functions/action-functions"
 require "states/loading"
 require "states/playground"
 
+-- Handlers
 ActionHandler = require "handlers/action-handler"
 StateHandler = require "handlers/state-handler"
 Debugger = require "handlers/debug-handler"
 MacroHandler = require "handlers/macro-handler"
+NodeScape = require "handlers/nodescape"
 	
 -- Objects
-NodeScape = require "handlers/nodescape"
+Node = require "objects/node"
 
 function love.load()
 	-- ORDER MATTERS
 	StateHandler = StateHandler:init()
 	Debugger = Debugger:init()
 	MacroHandler = MacroHandler:init()
+
+	NodeScape = NodeScape:init()
+
 end
 
 function love.draw()
 	Debugger:draw()
+
+	NodeScape:draw()
 
 	StateHandler:drawCurrentState()
 end

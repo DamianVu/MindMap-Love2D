@@ -10,7 +10,6 @@ function macrohandler:init()
 	setmetatable(obj, self)
 	self.__index = self
 
-	print(obj.macros)
 	return obj
 end
 

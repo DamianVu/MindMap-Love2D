@@ -7,7 +7,15 @@ LOADMENU = "Loading Nodescape"
 EDITOR = "Editing Nodescape"
 PLAYGROUND = "Damian's Playground"
 
--- Modifiers
+
+----- 	Node Data 	------
+NODE_ID_LENGTH = 10
+-- Shapes
+CIRCLE = "Circle"
+
+-- Types
+LABEL = "Label"
+
 
 
 -- Keys to not listen to (Modifiers)
