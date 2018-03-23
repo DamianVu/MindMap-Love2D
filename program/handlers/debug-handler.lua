@@ -15,7 +15,8 @@ function debugger:draw()
 		love.graphics.setColor(255,255,255)
 		love.graphics.print("Debug Info", 10, 10)
 		love.graphics.print("Current State: "..StateHandler:getCurrentState(), 10, 30)
-		love.graphics.print("Node Count: "..NodeScape:size(), 10, 50)
+		love.graphics.print("Node Count: "..NodeScape:getNumberOfNodes(), 10, 50)
+		love.graphics.print("Link Count: "..NodeScape:getNumberOfLinks(), 10, 70)
 	end
 end
 

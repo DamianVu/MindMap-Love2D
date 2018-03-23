@@ -3,7 +3,7 @@ local statehandler = {}
 
 function statehandler:init()
 	obj = {
-		currentstate = LOADING
+		currentstate = PLAYGROUND
 	}
 	setmetatable(obj, self)
 	self.__index = self

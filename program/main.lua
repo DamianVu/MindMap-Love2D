@@ -18,6 +18,7 @@ NodeScape = require "handlers/nodescape"
 	
 -- Objects
 Node = require "objects/node"
+Link = require "objects/link"
 
 function love.load()
 	-- ORDER MATTERS
@@ -31,8 +32,6 @@ end
 
 function love.draw()
 	Debugger:draw()
-
-	NodeScape:draw()
 
 	StateHandler:drawCurrentState()
 end

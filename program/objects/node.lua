@@ -22,6 +22,14 @@ function node:setPosition(x,y)
 
 end
 
+function node:getPosition()
+	return self.x, self.y
+end
+
+function node:getID()
+	return self.id
+end
+
 function node:draw()
 	-- Draw Node background
 	love.graphics.setColor(self.bgColor)
@@ -30,6 +38,12 @@ function node:draw()
 	-- Draw Node border
 	love.graphics.setColor(self.borderColor)
 	love.graphics.circle("line", self.x - self.size/2, self.y - self.size/2, self.size)
+
+	-- Draw Centerpoint in WHITE
+	love.graphics.setColor(255,255,255)
+	--love.graphics.circle("fill", self.x - self.size/2, self.y - self.size/2, 1)
+
+	love.graphics.print(self.id, self.x - 50, self.y + self.size/2)
 
 end
 
