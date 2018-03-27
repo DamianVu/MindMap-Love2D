@@ -83,7 +83,7 @@ end
 
 function nodescape:addRandomLink()
 	if #self.link_table == self:getMaximumNumberOfLinks() then
-		print("Too many Links")
+		
 		return
 	end
 	local count = #self.node_table
