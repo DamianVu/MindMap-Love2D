@@ -23,6 +23,7 @@ Link = require "objects/link"
 function love.load()
 	-- ORDER MATTERS
 	StateHandler = StateHandler:init()
+	StateHandler:default()
 	Debugger = Debugger:init()
 	MacroHandler = MacroHandler:init()
 
